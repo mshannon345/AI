@@ -5,6 +5,7 @@
 
 import hashlib
 import os
+import getpass
 
 def hash_password(password, salt):
     # Concatenate password and salt
@@ -14,8 +15,8 @@ def hash_password(password, salt):
     return hashed_password
 
 def main():
-    # Get user input for password
-    password = input("Enter your password: ")
+    # Get user input for password (hidden)
+    password = getpass.getpass("Enter your password: ")
 
     # Generate a random salt
     salt = os.urandom(16).hex()
